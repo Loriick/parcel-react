@@ -1,0 +1,29 @@
+{
+  "name": "parcel-react",
+  "version": "1.0.0",
+  "description": "quick starter react and parcel ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Loriick/parcel-react.git"
+  },
+  "author": "Loriick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Loriick/parcel-react/issues"
+  },
+  "homepage": "https://github.com/Loriick/parcel-react#readme",
+  "dependencies": {
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-router-dom": "^4.3.1",
+    "styled-components": "^4.1.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.10.3"
+  }
+}
