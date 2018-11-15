@@ -31592,20 +31592,50 @@ if ("development" !== 'production' && "development" !== 'test' && typeof window 
 
 var _default = styled;
 exports.default = _default;
-},{"stylis/stylis.min":"node_modules/stylis/stylis.min.js","stylis-rule-sheet":"node_modules/stylis-rule-sheet/index.js","react":"node_modules/react/index.js","@emotion/unitless":"node_modules/@emotion/unitless/dist/unitless.browser.esm.js","react-is":"node_modules/react-is/index.js","memoize-one":"node_modules/memoize-one/dist/memoize-one.esm.js","prop-types":"node_modules/prop-types/index.js","react-dom":"node_modules/react-dom/index.js","@emotion/is-prop-valid":"node_modules/@emotion/is-prop-valid/dist/is-prop-valid.esm.js","process":"node_modules/process/browser.js"}],"src/styles/appCss.js":[function(require,module,exports) {
+},{"stylis/stylis.min":"node_modules/stylis/stylis.min.js","stylis-rule-sheet":"node_modules/stylis-rule-sheet/index.js","react":"node_modules/react/index.js","@emotion/unitless":"node_modules/@emotion/unitless/dist/unitless.browser.esm.js","react-is":"node_modules/react-is/index.js","memoize-one":"node_modules/memoize-one/dist/memoize-one.esm.js","prop-types":"node_modules/prop-types/index.js","react-dom":"node_modules/react-dom/index.js","@emotion/is-prop-valid":"node_modules/@emotion/is-prop-valid/dist/is-prop-valid.esm.js","process":"node_modules/process/browser.js"}],"src/styles/styles.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.HeaderCss = exports.AppCss = void 0;
+exports.Err404 = exports.Logo = exports.HeaderCss = exports.GlobalStyle = void 0;
 
-var _styledComponents = _interopRequireDefault(require("styled-components"));
+var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n  > h3 {\n    margin-top: 20vh;\n    font-size: 40px;\n    .bye {\n      display: inline-block;\n      animation: ", " .4s infinite alternate;\n    }\n  }\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(70deg);\n  }\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n  width: 50vh;\n  margin-top: 5%;\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n  width: 100vw;\n  height: 50px;\n  background-color: black;\n\n  nav {\n    height: 100%;\n    width: 100%;\n    ul {\n      color: white;\n      li {\n        display: inline-block;\n      }\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100vw;\n  height: 50px;\n  background-color: black;\n  ul {\n    display: flex;\n    justify-content: flex-end;\n    li {\n      list-style: none;\n      padding: 10px;\n      > a {\n        text-decoration: none;\n        color: #fff;\n      }\n    }\n  }\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -31615,7 +31645,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  @import url(\"https://fonts.googleapis.com/css?family=Roboto\");\n\n  /* put your css code here */\n  text-align: center;\n  font-family: Roboto, sans-serif;\n"]);
+  var data = _taggedTemplateLiteral(["\n*{\n  padding: 0;\n  margin: 0;\n}\n\n\nbody{\n  @import url(\"https://fonts.googleapis.com/css?family=Roboto\");\n\n  /* put your css code here */\n  text-align: center;\n  font-family: Roboto, sans-serif;\n\n  background: #eee\n}\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -31626,13 +31656,21 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var AppCss = _styledComponents.default.div(_templateObject());
-
-exports.AppCss = AppCss;
+var GlobalStyle = (0, _styledComponents.createGlobalStyle)(_templateObject());
+exports.GlobalStyle = GlobalStyle;
 
 var HeaderCss = _styledComponents.default.header(_templateObject2());
 
 exports.HeaderCss = HeaderCss;
+
+var Logo = _styledComponents.default.img(_templateObject3());
+
+exports.Logo = Logo;
+var rotate = (0, _styledComponents.keyframes)(_templateObject4());
+
+var Err404 = _styledComponents.default.div(_templateObject5(), rotate);
+
+exports.Err404 = Err404;
 },{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/Header.js":[function(require,module,exports) {
 "use strict";
 
@@ -31645,12 +31683,12 @@ var _react = _interopRequireDefault(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
 
-var _appCss = require("../styles/appCss");
+var _styles = require("../styles/styles");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Header = function Header() {
-  return _react.default.createElement(_appCss.HeaderCss, null, _react.default.createElement("nav", null, _react.default.createElement("ul", null, _react.default.createElement("li", null, _react.default.createElement(_reactRouterDom.Link, {
+  return _react.default.createElement(_styles.HeaderCss, null, _react.default.createElement("nav", null, _react.default.createElement("ul", null, _react.default.createElement("li", null, _react.default.createElement(_reactRouterDom.Link, {
     to: "/"
   }, "Home")), _react.default.createElement("li", null, _react.default.createElement(_reactRouterDom.Link, {
     to: "/about"
@@ -31659,7 +31697,7 @@ var Header = function Header() {
 
 var _default = Header;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/es/index.js","../styles/appCss":"src/styles/appCss.js"}],"src/components/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/es/index.js","../styles/styles":"src/styles/styles.js"}],"src/components/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31671,7 +31709,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _Header = _interopRequireDefault(require("./Header"));
 
-var _appCss = require("../styles/appCss");
+var _styles = require("../styles/styles");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31709,7 +31747,9 @@ function (_Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      return _react.default.createElement(_react.Fragment, null, _react.default.createElement(_Header.default, null), _react.default.createElement(_appCss.AppCss, null, _react.default.createElement("h1", null, "Hello React Parcel")));
+      return _react.default.createElement(_react.Fragment, null, _react.default.createElement(_Header.default, null), _react.default.createElement("div", null, _react.default.createElement("h1", null, "Hello React Parcel"), _react.default.createElement(_styles.Logo, {
+        src: "https://tinyurl.com/parcel-react-logo"
+      })));
     }
   }]);
 
@@ -31717,7 +31757,7 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = App;
-},{"react":"node_modules/react/index.js","./Header":"src/components/Header.js","../styles/appCss":"src/styles/appCss.js"}],"src/components/About.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Header":"src/components/Header.js","../styles/styles":"src/styles/styles.js"}],"src/components/About.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31727,7 +31767,9 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _appCss = require("../styles/appCss");
+var _Header = _interopRequireDefault(require("./Header"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -31763,9 +31805,9 @@ function (_Component) {
   _createClass(About, [{
     key: "render",
     value: function render() {
-      return _react.default.createElement(_appCss.AppCss, {
+      return _react.default.createElement("div", {
         className: "about"
-      }, _react.default.createElement("h1", null, "About page"));
+      }, _react.default.createElement(_Header.default, null), _react.default.createElement("h1", null, "About page"));
     }
   }]);
 
@@ -31773,7 +31815,7 @@ function (_Component) {
 }(_react.Component);
 
 exports.default = About;
-},{"react":"node_modules/react/index.js","../styles/appCss":"src/styles/appCss.js"}],"src/components/Router.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Header":"src/components/Header.js"}],"src/components/NotFound.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -31783,101 +31825,64 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _Header = _interopRequireDefault(require("./Header"));
+
+var _styles = require("../styles/styles");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//header
+//style
+var NotFound = function NotFound() {
+  return _react.default.createElement(_styles.Err404, null, _react.default.createElement(_Header.default, null), _react.default.createElement("h3", null, "404 Error !!!", _react.default.createElement("br", null), _react.default.createElement("span", null, "Nothing Here"), _react.default.createElement("br", null), _react.default.createElement("span", {
+    className: "bye"
+  }, "\uD83D\uDC4B\uD83C\uDFFE")));
+};
+
+var _default = NotFound;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","./Header":"src/components/Header.js","../styles/styles":"src/styles/styles.js"}],"src/components/Router.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
 var _reactRouterDom = require("react-router-dom");
 
 var _App = _interopRequireDefault(require("./App"));
 
 var _About = _interopRequireDefault(require("./About"));
 
+var _NotFound = _interopRequireDefault(require("./NotFound"));
+
+var _styles = require("../styles/styles");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
 //components
+//style
 var Router = function Router() {
-  return _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement(_reactRouterDom.Switch, null, _react.default.createElement(_reactRouterDom.Route, {
+  return _react.default.createElement(_react.Fragment, null, _react.default.createElement(_reactRouterDom.BrowserRouter, null, _react.default.createElement(_reactRouterDom.Switch, null, _react.default.createElement(_reactRouterDom.Route, {
     exact: true,
     path: "/",
     component: _App.default
   }), _react.default.createElement(_reactRouterDom.Route, {
     path: "/about",
     component: _About.default
-  })));
+  }), _react.default.createElement(_reactRouterDom.Route, {
+    component: _NotFound.default
+  }))), _react.default.createElement(_styles.GlobalStyle, null));
 };
 
 var _default = Router;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/es/index.js","./App":"src/components/App.js","./About":"src/components/About.js"}],"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"src/styles/index.css":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/es/index.js","./App":"src/components/App.js","./About":"src/components/About.js","./NotFound":"src/components/NotFound.js","../styles/styles":"src/styles/styles.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -31886,15 +31891,12 @@ var _reactDom = require("react-dom");
 
 var _Router = _interopRequireDefault(require("./src/components/Router"));
 
-require("./src/styles/index.css");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //components
-//reset
 var root = document.querySelector("#root");
 (0, _reactDom.render)(_react.default.createElement(_Router.default, null), root);
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./src/components/Router":"src/components/Router.js","./src/styles/index.css":"src/styles/index.css"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./src/components/Router":"src/components/Router.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -31921,7 +31923,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51552" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58754" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

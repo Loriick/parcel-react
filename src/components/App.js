@@ -3,17 +3,18 @@ import React, { Component, Fragment } from "react";
 import Header from "./Header";
 
 //style
-import { AppCss } from "../styles/appCss";
+import { Logo } from "../styles/styles";
 
 export default class App extends Component {
   render() {
     return (
-      <div>
+      <Fragment>
         <Header />
-        <AppCss>
+        <div>
           <h1>Hello React Parcel</h1>
-        </AppCss>
-      </div>
+          <Logo src="https://tinyurl.com/parcel-react-logo" />
+        </div>
+      </Fragment>
     );
   }
 }

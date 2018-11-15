@@ -1,12 +1,15 @@
 import React, { Component } from "react";
-import { AppCss } from "../styles/appCss";
+
+//components
+import Header from "./Header";
 
 export default class About extends Component {
   render() {
     return (
-      <AppCss className="about">
+      <div className="about">
+        <Header />
         <h1>About page</h1>
-      </AppCss>
+      </div>
     );
   }
 }
