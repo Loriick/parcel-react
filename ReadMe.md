@@ -7,6 +7,7 @@
 ### How to use it
 
 1. Clone or Download the repo.
-2. Run `npm install``
-3. Run `npm start` start a local server
-4. Make your React application and have fun!
+2. Run `npm install`
+3. `cd parcel-react`
+4. Run `npm start` to start a local server
+5. Make your React application and have fun!
