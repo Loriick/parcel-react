@@ -1,32 +1,43 @@
 {
   "name": "parcel-react",
   "version": "1.0.0",
-  "description": "quick starter react and parcel ",
+  "description": "quick starter react and parcel",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel ./public/index.html",
     "build": "parcel ./public/index.html"
   },
+  "keywords": [
+    "react",
+    "starter",
+    "parcel",
+    "testing"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Loriick/parcel-react.git"
   },
-  "author": "Loriick",
+  "author": "<your name>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Loriick/parcel-react/issues"
   },
   "homepage": "https://github.com/Loriick/parcel-react#readme",
   "dependencies": {
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
     "react-router-dom": "^4.3.1",
     "styled-components": "^4.1.1"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "parcel-bundler": "^1.10.3"
+    "parcel-bundler": "^1.12.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-hot-loader": "^4.8.0"
   }
 }
